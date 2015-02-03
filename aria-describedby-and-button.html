@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARIA1: Screen readers use the aria-describedby to associate label elements that can receive user input.</title>
+<style>
+    body {
+        font: 100%/1.5 'Lucida Grande', sans-serif;
+    }
+    [role="main"] {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 40em;
+        display: block;
+    }
+    h1 {
+        line-height: 1.3;
+    }
+    table {
+        border: 1px solid #666;
+        border-collapse: collapse
+    }
+    tr:nth-child(odd) {
+        background: #dee3ea;
+    }
+    th, caption {
+        text-align: left;
+
+    }
+    td, th {
+        padding: 0.5em 1em;
+    }
+    th {
+        background: #543963;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <main role="main">
+        <h1>A button with text: 'www.w3.org' and an aria-describedby attribute.</h1>
+        <button aria-describedby="btn_desc">www.w3.org</button>
+        <p id="btn_desc">Open a new window</p></body>
+
+        <table>
+            <caption>Test Results</caption>
+            <tr>
+                <th scope="col">Browser</th>
+                <th scope="col">Screenreader</th>
+                <th scope="col">Result</th>
+
+            </tr>
+            <tr>
+                <td>Safari</td>
+                <td>VoiceOver</td>
+                <td>'Open a new window'</td>
+            </tr>
+            <tr>
+                <td>IE11</td>
+                <td>JAWS14</td>
+                <td>'Open a new window'</td>
+            </tr>
+            <tr>
+                <td>Google Chrome</td>
+                <td>JAWS14</td>
+                <td>'www.w3.org'</td>
+            </tr>
+            <tr>
+                <td>IE, Google Chrome</td>
+                <td>JAWS15</td>
+                <td>'www.w3.org Open a new window'</td>
+            </tr>
+        </table>
+    </main>
+
+</html>
